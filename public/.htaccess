@@ -1,0 +1,14 @@
+# Do not remove this line, otherwise mod_rewrite rules will stop working
+RewriteBase /
+
+#Gzip
+<ifmodule mod_deflate.c>
+<ifmodule mod_mime.c>   #Checks if your server supports Addtype
+Addtype font/opentype .otf
+Addtype font/eot .eot
+Addtype font/truetype .ttf
+AddType text/cache-manifest .appcache
+</ifmodule>
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/x-javascript application/javascript text/text font/opentype font/truetype font/eot
+</ifmodule>
+#End Gzip

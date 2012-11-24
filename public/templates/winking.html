@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" manifest="../manifest.appcache">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Kaomoji Cat helps you find the perfect kaomoji for you." />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    
+    <!-- insert html5 offline appcache stuff here -->
+    
+    <title>Kaomoji Cat is Sly!</title>
+  
+
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/add2home.css" />  
+  
+    <script src="../scripts/kaomoji.js"></script>
+    <script src="../scripts/add2home.js" type="text/javascript"></script>
+    
+    <!--script for add to home button-->
+    <script type="text/javascript"> 
+    var addToHomeConfig = {
+    	autostart: false,
+    	startDelay: 0
+    };
+    </script>
+    
+    <!-- favicons etc here -->
+  
+  </head>
+  <body onload="backbutton()">
+    <div id="wrap">
+      <div id="col1">
+        
+        <script>
+        document.write("<h1>" + winking_text + "</h1>")
+        </script>
+        
+        <a href="../index.html"><img src="../images/cat.svg" width="121px" height="79px" class="cat"></a>
+        
+        <!--only display fish class on template-->
+        <img src="../images/fish.svg" width="25px" height="57px" class="fish">
+        
+        <!--**-->        
+        <!--backbutton that's only displayed in app mode-->
+        <span id = "back_button" style="display: none;"><a href="../index.html"><img src="../images/app_back_arrow.svg" width="16px" height="18px"></a></span>
+
+        <ul style="margin-top: 131px;">
+          <script>          
+            for(var i=0; i<winking.length; i++){
+            document.write("<li class='template_li'>" + winking[i] + "<br></li>");
+            }
+          </script>
+        </ul>
+        
+        <div class="blackout"></div>
+        <div class="ropeTop"></div>
+  
+      </div> <!--closing col1-->
+   
+      <div id="footer">
+        <p>by <a href="https://twitter.com/pketh">@pketh</a>,</p>
+        <p><a href="#" onclick="addToHome.show(); return false">+ add to homescreen</a></p> 
+        <p>works offline!</p>
+        <a href="http://www.pketh.org"><img src="../images/pketh.svg" width="80px"  height="26px" class="pketh"></a>
+        
+      
+      </div> <!--closing footer-->
+      
+    </div> <!--closing wrap-->
+    
+  
+  
+  
+  
+  
+  
+  <!-- add google analytics script at bottom -->
+  </body>
+</html>

@@ -1,0 +1,159 @@
+  
+/* temporary image chk class */
+img:not([width]):not([height]) {
+  border: 2px solid red !important;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/AvenirMedium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/AvenirBlack.ttf') format('truetype');
+    font-weight: bold;
+    font-style: bold;
+}
+
+
+body {
+  background-color: black;
+  
+}
+
+#wrap {
+  font-family: "Avenir", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  color: white;
+  width: 100%;
+  
+}
+
+#col1 {
+  position: relative;
+  background: url(../images/rope.svg) repeat-y scroll left top;
+  background-position-x: 300px;
+  
+}
+
+
+h1 {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  margin-right: 24px;
+  margin-left: 24px;
+  margin-top: 26px;
+}
+
+.cat {
+  position: absolute;
+  top: 36px;
+  left: 175px;
+}
+
+ul {
+  margin-left: 24px;
+  margin-right: 24px;
+margin-top: 100px;
+font-weight: normal;
+}
+
+li {
+display: inline;
+  list-style-type: none;
+  font-size: 18px;
+  line-height: 37px;
+}
+
+.template_li {
+  display: block;
+  text-align: center;
+}
+
+li a {
+  text-decoration: underline;
+  color: white;
+  margin-right: 20px;
+}
+
+.blackout {
+  background: url(../images/black.png) no-repeat left top;
+  position: absolute;
+  height: 336px;
+  width: 15px;
+  top: 0px;
+  left: 300px;
+}
+
+.ropeTop {
+  background: url(../images/ropeTop.svg) no-repeat left top;
+  top: 328px;
+  left: 298px;
+  width: 17px;
+  height: 10px;
+  position: absolute;
+}
+
+
+/* template specific styles */
+
+.fish {
+  position: absolute;
+  top: 93px;
+  left: 235px;
+  transform:rotate(25.7deg);
+  -ms-transform:rotate(25.7deg); /* IE 9 */
+  -moz-transform:rotate(25.7deg); /* Firefox */
+  -webkit-transform:rotate(25.7deg);
+  -o-transform:rotate(25.7deg); /* Opera */
+}
+
+/*global footer styles*/
+
+#footer {
+  height: 79px;
+  position: relative;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: normal;
+  font-style: normal;
+  color: #58585A;
+  margin-left: 24px;
+  padding-top: 15px;
+}
+
+#footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.pketh {
+  position: absolute;
+  top: 37px;
+  left: 192px;
+}
+
+/*webapp mode conditional styles , toggled off in js for normal use*/
+
+#back_button {
+  position: fixed;
+  top: 55%;
+  left: 24px;
+  width: 16px;
+  height: 18px;
+}
+
+/*
+@media only screen and (min-device-width: 553px) {
+  
+  .blackout {display: none;}  
+  .ropeTop {display: none;}
+  #col1 {  background-position-x: 97%;
+           background-position-y: 50%;
+}
+  .cat {left: 60%;}
+  .fish{left:65%;}
+  
+} */
