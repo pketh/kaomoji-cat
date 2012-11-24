@@ -1,7 +1,7 @@
 # Kaomoji Cat
 
 Kaomojis are like emojis but in the form of text strings like: 
-this happy guy ＼（＠￣∇￣＠）／ 
+this happy guy ＼（＠￣∇￣＠）／ <br>
 or 
 this dude flipping over a table (╯°□°）╯︵ ┻━┻
 
