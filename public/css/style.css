@@ -314,6 +314,11 @@ li a {
     width: 75%;
   }
   
+  li {
+    font-size: .9em;
+    line-height: 2.2;
+  }
+  
   #rope {
     top: 750px;
   }
