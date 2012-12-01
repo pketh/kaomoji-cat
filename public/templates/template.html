@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" manifest="manifest.appcache">
-  <head>
+<html lang="en" manifest="../manifest.appcache">  <head>
     <meta charset="utf-8">
     <meta name="description" content="Find the perfect Kaomoji to express how you're feeling." />
     <meta name="viewport" content="initial-scale = 1.0, user-scalable = no">
@@ -114,7 +113,9 @@
             
             <div class="fish"></div>
             
-            <span id = "back_button" style="display: none;"><a href="../index.html"><img src="../images/app_back_arrow.svg" width="32px" height="30px"></a></span>  <!-- Back-button is only displayed in app mode-->
+            <a ontouchstart="" href="../index.html">
+              <div id = "back_button" style="display: none;"></div>
+            </a>  <!-- Back-button is only displayed in app mode-->
 
 
             <ul class="content">

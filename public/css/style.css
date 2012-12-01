@@ -167,15 +167,15 @@ li a {
 #back_button {
   position: fixed;
   top: 55%;
-  left: 22px;
-  width: 32px;
-  height: 30px;
-/*   background-image: url('../images/app_back_arrow.svg');
-  background-size: contain;
- */  /* max-width: 15px; */
+  left: 19px;
+  width: 38px;
+  height: 35px;
+  background-image: url('../images/app_back_arrow.svg');
+  background-repeat: no-repeat;
 }
 
 #back_button:active {
+  background-image: url('../images/app_back_arrow_active.svg');
 }
 
 /* =============================================== */

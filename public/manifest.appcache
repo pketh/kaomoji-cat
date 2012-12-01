@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Last Change: December 1, 2012 2:29 PM
+# Last Change: December 1, 2012 3:01 PM
 
 CACHE:
 
@@ -15,6 +15,8 @@ images/pketh-active.svg
 images/rope-full.svg
 images/blackout.gif
 images/app_back_arrow.svg
+images/app_back_arrow_active.svg
+
 
 scripts/kaomoji.js
 
@@ -61,3 +63,4 @@ http://www.pketh.org
 scripts/add2home.js
 css/add2home.css
 http://stats.hosting24.com/count.php
+http://www.google-analytics.com/ga.js
