@@ -1,70 +1,80 @@
-  
-/* temporary image chk class */
-img:not([width]):not([height]) {
-  border: 2px solid red !important;
-}
-
 @font-face {
-    font-family: 'Avenir';
+    font-family: "Avenirs";
     src: url('../fonts/AvenirMedium.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Avenir';
+    font-family: "Avenirs";
     src: url('../fonts/AvenirBlack.ttf') format('truetype');
     font-weight: bold;
-    font-style: bold;
-}
+ }
 
+/* =============================================== */
+/* GLOBALS */
+/* =============================================== */
 
 body {
   background-color: black;
-  
+  font-family: Avenir, "Avenirs", Helvetica, sans-serif;
+  color: white;
+  width: 100%; /* 320 */
 }
 
 #wrap {
-  font-family: "Avenir", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-  color: white;
-  width: 100%;
-  
-}
-
-#col1 {
+  overflow: hidden;
   position: relative;
-  background: url(../images/rope.svg) repeat-y scroll left top;
-  background-position-x: 300px;
-  
 }
 
+#rope {
+  position: absolute;
+  background: url('../images/rope-full.svg');
+  left: 93.75%;
+  top: 328px;
+  width: 4.375%; /* 14px */
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 20px;
+  /* max-width: 14px; */
+}
 
 h1 {
   font-weight: bold;
-  font-size: 24px;
-  line-height: 30px;
-  margin-right: 24px;
-  margin-left: 24px;
+  font-size: 1.5em; /* 24px */
+  line-height: 1.25em; /* 30px */
+  margin-right: 7.5%; /* 24px */
+  margin-left: 7.5%; /* 24px */
   margin-top: 26px;
+  position: absolute;
 }
 
 .cat {
   position: absolute;
-  top: 36px;
-  left: 175px;
+  top: 60px;
+  left: 54.6875%; /* 175px */
+  background-image: url('../images/cat.svg');
+  background-repeat: no-repeat;
+  width: 38.125%; /* 122px */
+  min-height: 80px;
+  background-size: cover;
+  overflow: visible;
 }
 
-ul {
-  margin-left: 24px;
-  margin-right: 24px;
-margin-top: 100px;
-font-weight: normal;
+ul.content {
+  margin-left: 7.5%; /* 24px */
+  margin-right: 7.5%; /* 24px */
+  margin-top: 170px;
+  font-weight: normal;
+  width: 85%;
+  font-family: Avenir, "Avenirs", Helvetica, sans-serif;
 }
 
 li {
 display: inline;
   list-style-type: none;
-  font-size: 18px;
-  line-height: 37px;
+  font-size: 1.125em; /* 18px */
+  line-height: 2.0555555556em; /* 37px */
 }
 
 .template_li {
@@ -78,50 +88,46 @@ li a {
   margin-right: 20px;
 }
 
-.blackout {
-  background: url(../images/black.png) no-repeat left top;
-  position: absolute;
-  height: 336px;
-  width: 15px;
-  top: 0px;
-  left: 300px;
-}
-
-.ropeTop {
-  background: url(../images/ropeTop.svg) no-repeat left top;
-  top: 328px;
-  left: 298px;
-  width: 17px;
-  height: 10px;
-  position: absolute;
-}
-
-
-/* template specific styles */
+/* =============================================== */
+/* TEMPLATE PAGES */
+/* =============================================== */
 
 .fish {
   position: absolute;
-  top: 93px;
-  left: 235px;
+  top: 113px;
+  left: 68%; /* 235px */
   transform:rotate(25.7deg);
   -ms-transform:rotate(25.7deg); /* IE 9 */
   -moz-transform:rotate(25.7deg); /* Firefox */
   -webkit-transform:rotate(25.7deg);
   -o-transform:rotate(25.7deg); /* Opera */
+  width: 7.8125%; /* 25px */
+  height: 10%; /* 57px */
+  background-image: url('../images/fish.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-height: 106px;
 }
 
-/*global footer styles*/
+
+/* =============================================== */
+/* FOOTER */
+/* =============================================== */
+
+/* TODO Wrap footer text lines in classes for device adjustability */
 
 #footer {
   height: 79px;
   position: relative;
-  font-size: 14px;
+  font-size: 0.875em; /* 14px */
   line-height: 22px;
   font-weight: normal;
   font-style: normal;
   color: #58585A;
-  margin-left: 24px;
+  margin-left: 7.5%;
   padding-top: 15px;
+  background-image: url('../images/blackout.gif');
+  background-repeat: repeat;
 }
 
 #footer a {
@@ -131,29 +137,399 @@ li a {
 
 .pketh {
   position: absolute;
-  top: 37px;
-  left: 192px;
+  top: 34%; /* 37px */
+  left: 64.8648648649%; /* 192px */
+  width: 27.027027027%; /* 80px */
+  height: 100%; /* 26px */
+  background-image: url('../images/pketh.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* max-width: 80px; */
+  
 }
 
-/*webapp mode conditional styles , toggled off in js for normal use*/
+.pketh:active {
+  background-image: url('../images/pketh-active.svg');
+  background-size: contain;
+  /* max-width: 80px; */
+}
+
+/* =============================================== */
+/* IOS APP conditional styles , hidden in web mode */
+/* =============================================== */
+
+/* TODO put the image into here and add an :active bk glow arrow image */
 
 #back_button {
   position: fixed;
   top: 55%;
   left: 24px;
-  width: 16px;
+  width: 15px;
   height: 18px;
+  background-image: url('../images/app_back_arrow.svg');
+  background-size: contain;
+  /* max-width: 15px; */
 }
 
-/*
-@media only screen and (min-device-width: 553px) {
-  
-  .blackout {display: none;}  
-  .ropeTop {display: none;}
-  #col1 {  background-position-x: 97%;
-           background-position-y: 50%;
+#back_button:active {
 }
-  .cat {left: 60%;}
-  .fish{left:65%;}
+
+/* =============================================== */
+/* MEDIA BREAK PTS */
+/* =============================================== */
+
+/* Defaults above = iphone portrait */
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+
+  body {
+    font-size: 24px;
+  }
   
-} */
+  #rope {
+    top: 280px;
+  }
+  
+  #footer {
+    font-size: 0.775em;
+  }
+  
+  .cat {
+    min-height: 120px;
+  }
+
+  .fish {
+    top: 142px;
+    left: 70%;
+  }
+  
+  ul.content {
+    margin-top: 237px;
+  }
+
+  .for-ios {
+      display: none;
+    }
+    .for-pc {
+      display: inline;
+    }
+    
+
+}
+  
+@media (device-width : 320px) {
+  .for-ios {
+    display: inline;
+  }
+  .for-pc {
+    display: none;
+  }
+} /* closing iphone landscape */
+
+@media screen and (min-width: 520px) {
+  .cat {
+    width: 35.125%;
+  }
+}
+
+@media only screen and (min-width : 540px) {
+  .cat {
+    left: 58.6875%;
+    width: 33.125%;
+    min-height: 141px;
+  }
+  
+  .fish {
+    top: 160px;
+    left: 76%;
+  }
+}
+
+/* iphone 5 landscape ---------------- */
+@media only screen and (min-width : 568px) {
+
+  ul.content {
+    width: 83%;
+    margin-top: 270px;
+  }
+
+}
+
+@media only screen and (device-width : 568px) {
+
+  .for-ios {
+    display: inline;
+  }
+  .for-pc {
+    display: none;
+  }
+}/* closing iphone 5 landscape */
+
+@media screen and (min-width : 614px) {
+  .cat {
+    left: 56.6875%;
+    width: 35.125%;
+  }
+  
+  .fish {
+    top: 161px;
+    left: 72%;
+  }
+  
+}
+
+@media only screen and (min-width : 642px) {
+  .cat {
+    width: 33.125%;
+    left: 58.6875%;
+  }
+}
+
+@media screen and (min-width : 716px ) {
+  .cat {
+    width: 30.125%;
+    left: 62.6875%;
+  }
+  
+  .pketh {
+    width: 20%;
+  }
+  
+  .fish {
+    top: 160px;
+    left: 75%;
+  }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-width : 768px) {
+
+  body {
+    font-size: 30px;
+  }
+  
+  ul.content {
+    margin-top: 300px;
+    width: 75%;
+  }
+  
+  #rope {
+    top: 750px;
+  }
+  
+  .cat {
+    min-height: 191px;
+    width: 37.125%;
+    left: 56.6875%;
+  }
+  
+  .fish {
+      top: 197px;
+      left: 74%;
+      max-height: 130px;
+      }
+  
+  .padding {
+    padding-bottom: 35px;
+    padding-top: 45px;
+  }
+  
+  #footer {
+    font-size: 0.575em;
+    line-height: 1.3em;
+  }
+  
+  .pketh {
+    width: 18%;
+    left: 72%;
+    top: 21%;
+  }
+
+}
+
+@media only screen and (device-width : 768px) {
+  .for-ios {
+    display: inline;
+  }
+  .for-pc {
+    display: none;
+  }
+}
+ /* closing ipad portrait */
+
+@media screen and (min-width: 840px) {
+ .cat {
+   width: 34.125%;
+   left: 58.6875%;
+ }
+  .fish {
+    top: 199px;
+    left: 75%;
+  }
+}
+/* middle small screens 900px wide  ------------ */
+@media only screen and (min-width : 900px) {
+  
+  #rope {
+    top: 580px;
+  }
+  
+  .cat {
+    width: 32%;
+    left: 60%;
+  }
+  
+  .pketh {
+    left: 70%;
+  }
+}
+
+@media only screen and (min-width : 928px) {
+  .cat {
+    width: 31.125%;
+  }
+}
+
+@media only screen and (min-width : 950px) {
+  .cat {
+    width: 30.125%;
+  }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-width : 1024px) {
+
+  .cat {
+    min-height: 184px;
+    width: 27%;
+    left: 62%;
+  }
+  
+  .pketh {
+    width: 15%;
+    left: 74%;
+  }
+  
+  #rope {
+    top: 420px;
+  }
+
+}
+
+@media only screen and (device-width : 1024px) {
+  .for-ios {
+    display: inline;
+  }
+  .for-pc {
+    display: none;
+  }
+}
+
+ /* closing ipad landscape */
+
+@media screen and (min-width : 1098px ){
+  ul.content {
+    width: 56%;
+  }
+  
+  #rope {
+    left: 72.75%;
+  }
+  
+  .cat {
+    width: 25%;
+    left: 48%;
+  }
+  .pketh {
+    width: 12%;
+    left: 55%;
+  }
+  #footer {
+    font-size:0.60em;
+    padding-top: 29px;
+    top: 37%;
+  }
+  
+}
+
+@media only screen and (min-width : 1118px) {
+  .cat {
+    width: 25%;
+  }
+  .fish {
+    left: 59%;
+  }
+}
+
+/* Desktops and laptops (2318px on retina)----------- */
+@media only screen and (min-width : 1216px) {
+
+  .cat {
+    width: 23%;
+  }
+  
+} /* closing desktop */
+
+@media only screen and (min-width : 1341px) {
+
+  .cat {
+    width: 21%;
+  }
+
+}
+
+
+/* Big Screens ----------------- */
+@media only screen and (min-width : 1420px) {
+
+  ul.content {
+    width: 55%
+  }
+  
+  #rope {
+    left: 74%;
+  }
+  .cat {
+    width: 21%;
+    left: 52%;
+  }
+  .fish {
+    left: 62%;
+    top: 206px;
+  }
+  
+  .pketh {
+  width: 10%;
+  left: 57%;
+  top: 41%;
+  }
+  
+  #footer {
+    font-size: 0.675em;
+    padding-top: 35px;
+  }
+
+/* Styles */
+} /* closing big ass screens */
+
+@media screen and (min-width: 1486px) {
+  .cat {
+    width: 18%;
+  }
+  .fish {
+    left: 60.5%;
+    top: 206px;
+  }
+}
+
+@media screen and (min-widthj:1744px) {
+  .cat {
+    width: 16%;
+  }
+  .fish {
+    left: 59.5%;
+  }
+}
+
+/*  narrow contents, custom footer txt to display for compuetrr - (hide for device width ipad) */

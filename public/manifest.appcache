@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Last Change: September 23, 2012 3:12 PM
+# Last Change: November 25, 2012
 
 CACHE:
 
@@ -11,15 +11,12 @@ fonts/AvenirMedium.otf
 images/cat.svg
 images/fish.svg
 images/pketh.svg
-images/rope.svg
-images/ropeTop.svg
+images/rope-full.svg
 images/black.png
+
 images/app_back_arrow.svg
+
 images/favicon.ico
-images/57.png
-images/72.png
-images/114.png
-images/144.png
 scripts/kaomoji.js
 scripts/retina.js
 templates/action.html

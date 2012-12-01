@@ -1,83 +1,132 @@
 <!DOCTYPE html>
-<html lang="en" manifest="../manifest.appcache">
+<html lang="en" manifest="manifest.appcache">
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="Kaomoji Cat helps you find the perfect kaomoji for you." />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Find the perfect Kaomoji to express how you're feeling." />
+    <meta name="viewport" content="initial-scale = 1.0, user-scalable = no">
     <meta name="apple-mobile-web-app-capable" content="yes">
-  	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-    
-    
-    <!-- insert html5 offline appcache stuff here -->
-    
-    <title>Kaomoji Cat is Unique!</title>
-  
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>Kaomoji Cat</title>
 
     <link rel="stylesheet" type="text/css" href="../css/reset.css" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
-    <link rel="stylesheet" type="text/css" href="../css/add2home.css" />  
-  
+    <link rel="stylesheet" type="text/css" href="../css/add2home.css" />
+
     <script src="../scripts/kaomoji.js"></script>
-    <script src="../scripts/add2home.js" type="text/javascript"></script>
-    
-    <!--script for add to home button-->
-    <script type="text/javascript"> 
-    var addToHomeConfig = {
-    	autostart: false,
-    	startDelay: 0
-    };
+    <script src="../scripts/fastclick.js"></script>
+
+    <!-- Fastclick applied on body -->
+    <script>
+        window.addEventListener('load', function() {
+          new FastClick(document.body);
+        }, false);
     </script>
-    
-    <!-- favicons etc here -->
-  
+
+    <!-- Google Analytics stuff -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-36730291-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+<!-- Favicons and Touch icons -->
+    <link href="../images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../images/57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../images/72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../images/114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../images/144.png">
+
+<!-- IOS Launch screen images --> <!-- TODO: CHANGE THESE TO ABSOLUTE PATHS -->
+        <!-- iPhone -->
+        <link href="../images/apple-touch-startup-image-320x460.png"
+              media="(device-width: 320px) and (device-height: 480px)
+                 and (-webkit-device-pixel-ratio: 1)"
+              rel="apple-touch-startup-image">
+
+        <!-- iPhone (Retina) -->
+        <link href="../images/apple-touch-startup-image-640x920.png"
+              media="(device-width: 320px) and (device-height: 480px)
+                 and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image">
+
+        <!-- iPhone 5 -->
+        <link href="../images/apple-touch-startup-image-640x1096.png"
+              media="(device-width: 320px) and (device-height: 568px)
+                 and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image">
+
+        <!-- old iPad portrait and landscape --> <!-- WEBAPP letterbox ERROR -->
+        <link href="../images/apple-touch-startup-image-768x1004.png"
+              media="(device-width: 768px) and (device-height: 1024px)
+                 and (orientation: portrait)
+                 and (-webkit-device-pixel-ratio: 1)"
+              rel="apple-touch-startup-image">
+        <link href="../images/apple-touch-startup-image-748x1024.png"
+              media="(device-width: 768px) and (device-height: 1024px)
+                 and (orientation: landscape)
+                 and (-webkit-device-pixel-ratio: 1)"
+              rel="apple-touch-startup-image">
+
+        <!-- iPad (Retina) portrait and landscape --> <!-- WEBAPP letterbox ERROR -->
+        <link href="../images/apple-touch-startup-image-1536x2008.png"
+              media="(device-width: 768px) and (device-height: 1024px)
+                 and (orientation: portrait)
+                 and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image">
+        <link href="../images/apple-touch-startup-image-1496x2048.png"
+              media="(device-width: 768px) and (device-height: 1024px)
+                 and (orientation: landscape)
+                 and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image">
+
+
   </head>
   <body onload="backbutton()">
-    <div id="wrap">
-      <div id="col1">
-        
-        <script>
-        document.write("<h1>" + misc_text + "</h1>")
-        </script>
-        
-        <a href="../index.html"><img src="../images/cat.svg" width="121px" height="79px" class="cat"></a>
-        
-        <!--only display fish class on template-->
-        <img src="../images/fish.svg" width="25px" height="57px" class="fish">
-        
-        <!--**-->        
-        <!--backbutton that's only displayed in app mode-->
-        <span id = "back_button" style="display: none;"><a href="../index.html"><img src="../images/app_back_arrow.svg" width="16px" height="18px"></a></span>
+      <div id="wrap">
+          <div id="rope"></div>
 
-        <ul style="margin-top: 71px;">
-          <script>          
-            for(var i=0; i<misc.length; i++){
-            document.write("<li class='template_li'>" + misc[i] + "<br></li>");
-            }
-          </script>
-        </ul>
-        
-        <div class="blackout"></div>
-        <div class="ropeTop"></div>
-  
-      </div> <!--closing col1-->
-   
+            <!-- CUSTOMIZE TEMPLATE HERE -->
+            <script>
+            document.write("<h1>" + misc_text + "</h1>")
+            </script>
+
+            <div class="cat"></div>
+            
+            <div class="fish"></div>
+            
+            <span id = "back_button" style="display: none;"><a href="../index.html"><img src="../images/app_back_arrow.svg" width="16px" height="18px"></a></span>  <!-- Back-button is only displayed in app mode-->
+
+
+            <ul class="content">
+              <!-- CUSTOMIZE HERE TOO -->
+              <script>
+                for(var i=0; i<misc.length; i++){
+                    document.write("<li class='template_li'>" + misc[i] + "<br></li>");
+                }
+              </script>
+            </ul>
+
       <div id="footer">
         <p>by <a href="https://twitter.com/pketh">@pketh</a>,</p>
-        <p><a href="#" onclick="addToHome.show(); return false">+ add to homescreen</a></p> 
-        <p>works offline!</p>
-        <a href="http://www.pketh.org"><img src="../images/pketh.svg" width="80px"  height="26px" class="pketh"></a>
-        
-      
+
+        <!-- template/webapp specific footer msg -->
+        <!-- CUSTOMIZE : based on old title name -->
+        <p class="webapp-footer">Kaomoji Cat is Unique!</p>
+        <p class="webapp-footer"><a href="http://www.pketh.org">See More of my stuff</a><br/></p>
+
+
+        <a href="http://www.pketh.org"><div class="pketh"></div></a>
+
       </div> <!--closing footer-->
-      
     </div> <!--closing wrap-->
-    
-  
-  
-  
-  
-  
-  
-  <!-- add google analytics script at bottom -->
   </body>
 </html>

@@ -38,9 +38,9 @@ function backbutton(){
         console.log("running as a app") // test code
         // back button for app mode
         var backbutton = document.getElementById("back_button");
-        backbutton.style.display="inline";                
+        backbutton.style.display="inline";
     }
-    else {    
+    else {
         console.log("not running as an app") // test code
         // display none for .class .backbutton
         var backbutton = document.getElementById("back_button");
@@ -48,12 +48,31 @@ function backbutton(){
     }
 }
 
-// making koamoji text selection easy for iphone 
+function webapp_footer_msg() {
+    if (
+        ("standalone" in window.navigator) &&
+        window.navigator.standalone
+        )
+        {
+            console.log("running as a web app for footer replacement")
+            var ios_foot = document.getElementsByClassName("for-ios");
+            ios_foot.style.display="none";
+            
+            var app_foot = document.getElementsByClassName("webapp-footer");
+            app_foot.style.display="inline";
+        }
+        
+    else {
+            console.log ("just being regular for footer")
+    }
+}
+
+// todo: make koamoji text selection easy for iphone.. if possible.
 
 
-var action_name = "Action"; 
+var action_name = "Action";
 var action_text = "So many punches <br>to give and <br>tables to <br>flip";
-var action = [ "(╯°□°）╯︵ ┻━┻", "┬──┬◡ﾉ(° -°ﾉ)", "〆(・∀・＠)", "((((*｡_｡)_", "(*・_・)ノ⌒*", "八(＾□＾*)", "(?・・)σ", "(ι´Д｀)ﾉ", "d(-_^)", "( ﾟ∀(・－・)", "p(*＾-＾*)q", "(*・)σσσ(*゜Д゜*)", "ヽ｀、ヽ｀ヽ(*￣o￣*)>ヽ｀、ヽ｀", "￢o(￣-￣ﾒ)", "（　＾）／占~~~~~", "（*＾＾）/~~~~~~~~~~◎", "（。_°☆＼(- – )", "( `_)乂(_’ )", "Ｏ( ｀_´)乂(｀_´ )Ｏ", "(`･ω･´)ゞ", "(●ゝω)ノヽ(∀＜●)", "凸(⊙▂⊙✖ )", "(づ￣ ³￣)づ", "๏[-ิ_•ิ]๏", "( ^o)ρ┳┻┳°σ(o^ )", "ヽ(^o^)ρ┳┻┳°σ(^o^)/", "(／_^)／ 　　　　　　●　＼(^_＼)", "＝( ^o^)ノ ．．．…___ｏ", "(-^-^)p_____|_o____q(^-^ )", "(／o^)/ °⊥ ＼(^o＼)", "(ｏ・_・)ノ”(ノ_＜。)", "―(T_T)→", "ლ(´ڡ`ლ)", "(☞ﾟ∀ﾟ)☞"
+var action = [ "(╯°□°）╯︵ ┻━┻", "┬──┬◡ﾉ(° -°ﾉ)", "〆(・∀・＠)", "((((*｡_｡)_", "(*・_・)ノ⌒*", "八(＾□＾*)", "(?・・)σ", "(ι´Д｀)ﾉ", "d(-_^)", "( ﾟ∀(・－・)", "p(*＾-＾*)q", "(*・)σσσ(*゜Д゜*)", "ヽ｀、ヽ｀ヽ(*￣o￣*)>ヽ｀、ヽ", "￢o(￣-￣ﾒ)", "（　＾）／占~~~~~", "（*＾＾）/~~~~~~~~~~◎", "（。_°☆＼(- – )", "( `_)乂(_’ )", "Ｏ( ｀_´)乂(｀_´ )Ｏ", "(`･ω･´)ゞ", "(●ゝω)ノヽ(∀＜●)", "凸(⊙▂⊙✖ )", "(づ￣ ³￣)づ", "๏[-ิ_•ิ]๏", "( ^o)ρ┳┻┳°σ(o^ )", "ヽ(^o^)ρ┳┻┳°σ(^o^)/", "(／_^)／ 　　　●　＼(^_＼)", "＝( ^o^)ノ ．．．…___ｏ", "(-^-^)p_____|_o____q(^-^ )", "(／o^)/ °⊥ ＼(^o＼)", "(ｏ・_・)ノ”(ノ_＜。)", "―(T_T)→", "ლ(´ڡ`ლ)", "(☞ﾟ∀ﾟ)☞"
 ];   //      (╯°Д°）╯︵/(.□ . \)
 
 var angry_name = "Angry";
@@ -154,7 +173,7 @@ var laughing = [ "（・∀・）", "（　´∀｀）", "（⌒▽⌒）", "（
 ];
 
 var mellow_name = "Mellow and meh";
-var mellow_text = "comme ci <br>comme ça"; // verify, look up accents 
+var mellow_text = "comme ci <br>comme ça"; // verify, look up accents
 var mellow = [
 "ヽ（´ー｀）┌", "┗┐ヽ(′Д、`*)ﾉ┌┛", "ヽ( ´¬`)ノ", "┗┃・ ■ ・┃┛", "ヾ(´A｀)ノﾟ", "ヽ（・＿・；)ノ", "ヽ(　￣д￣;)ノ", "＼（〇_ｏ）／", "ヽ(。_°)ノ", "＼(;´□｀)/", "ヾ(*´ー`)ノ", "ヽ(‘ー`)ノ", "ヽ(ー_ー )ノ", "ヽ(´～｀；）", "┐(‘～`；)┌", "ヽ（*ω。）ノ", "(;´・`)>", "（＾～＾）", "╮(─▽─)╭", "٩(-̮̮̃•̃)۶"
 ]; //     ¯\\_(ツ)_/¯
@@ -194,7 +213,7 @@ var pig = [ "( ´(00)`)", "ヾ(；ﾟ(OO)ﾟ)ﾉ", "ヽ(*’(OO)’)ﾉ", "(￣(
 ];
 
 var sad_name = "Sad or Crying";
-var sad_text = "I'll cry you a river, <br>or a single <br>tear"; 
+var sad_text = "I'll cry you a river, <br>or a single <br>tear";
 var sad = [ "（ ; ; ）", "(T＿T)", "（ ＴДＴ）", "(ToT)", "(Ｔ▽Ｔ)", "(‘A`)", "（；_・）", "(T_T)", "((T.T； )", "（；へ：）", "(´＿｀。)", "(´∩｀。)", "｡：ﾟ(｡ﾉω＼｡)ﾟ･｡", "(┳Д┳)", "(´；д；`)", "((´д｀))", "(ノД`)・゜・。", "・(/Д`)・", "｡゜(｀Д´)゜｡", "（；￣д￣）", "( ≧Д≦)", "(*´；ェ；`*)", "｡･ﾟﾟ･(>д<)･ﾟﾟ･｡", "(。┰ω┰。)", "(゜´Д｀゜)", "（ｉДｉ）", "(´；ω；`)", "。ﾟ(ﾟﾉД｀ﾟ)ﾟ｡", "ヽ(´□｀。)ﾉ", "(ﾟ´Д｀ﾟ)ﾟ", "{{p´Д｀q}}", "ヽ(●ﾟ´Д｀ﾟ●)ﾉﾟ", "( p_q)", ".・゜゜・（／。＼）・゜゜・．", "(个_个)", "(。┰ω┰。)", "p(´⌒｀｡q)", "(/□＼*)・゜", "(ㄒoㄒ)", "⊙︿⊙", "o(╥﹏╥)o", "o(；△；)o", "(;*△*;)", "（´＿｀）", "╥﹏╥", "(´°̥̥̥̥̥̥̥̥ω°̥̥̥̥̥̥̥̥｀)", "(∩︵∩)", "(╯︵╰,)", "(︶︹︺)", "(╥_╥)", "(╯︵╰,)"
 ];
 

@@ -1,5 +1,5 @@
 /*!
- * Add to Homescreen v2.0.1 ~ Copyright (c) 2012 Matteo Spinelli, http://cubiq.org
+ * Add to Homescreen v2.0.4 ~ Copyright (c) 2012 Matteo Spinelli, http://cubiq.org
  * Released under MIT license, http://cubiq.org/license
  */
 var addToHome = (function (w) {
@@ -23,12 +23,12 @@ var addToHome = (function (w) {
 		closeTimeout,
 
 		options = {
-			autostart: false,			// Automatically open the balloon
+			autostart: true,			// Automatically open the balloon
 			returningVisitor: false,	// Show the balloon to returning visitors only (setting this to true is HIGHLY RECCOMENDED)
-			animationIn: 'bubble',		// drop || bubble || fade
+			animationIn: 'drop',		// drop || bubble || fade
 			animationOut: 'fade',		// drop || bubble || fade
-			startDelay: 0,			// 2 seconds from page load before the balloon appears
-			lifespan: 10000,			// 15 seconds before it is automatically destroyed
+			startDelay: 2000,			// 2 seconds from page load before the balloon appears
+			lifespan: 15000,			// 15 seconds before it is automatically destroyed
 			bottomOffset: 14,			// Distance of the balloon from bottom
 			expire: 0,					// Minutes to wait before showing the popup again (0 = always displayed)
 			message: '',				// Customize your message or force a language ('' = automatic)
@@ -49,6 +49,7 @@ var addToHome = (function (w) {
 			fi_fi: 'Asenna tämä web-sovellus laitteeseesi %device: paina %icon ja sen jälkeen valitse <strong>Lisää Koti-valikkoon</strong>.',
 			fr_fr: 'Ajoutez cette application sur votre %device en cliquant sur %icon, puis <strong>Ajouter à l\'écran d\'accueil</strong>.',
 			he_il: '<span dir="rtl">התקן אפליקציה זו על ה-%device שלך: הקש %icon ואז <strong>הוסף למסך הבית</strong>.</span>',
+			hr_hr: 'Instaliraj ovu aplikaciju na svoj %device: klikni na %icon i odaberi <strong>Dodaj u početni zaslon</strong>.',
 			hu_hu: 'Telepítse ezt a web-alkalmazást az Ön %device-jára: nyomjon a %icon-ra majd a <strong>Főképernyőhöz adás</strong> gombra.',
 			it_it: 'Installa questa applicazione sul tuo %device: premi su %icon e poi <strong>Aggiungi a Home</strong>.',
 			ja_jp: 'このウェブアプリをあなたの%deviceにインストールするには%iconをタップして<strong>ホーム画面に追加</strong>を選んでください。',
@@ -67,14 +68,14 @@ var addToHome = (function (w) {
 		};
 
 	function init () {
-		// Preliminary check, prevents all further checks to be performed on iDevices only
+		// Preliminary check, all further checks are performed on iDevices only
 		if ( !isIDevice ) return;
 
 		var now = Date.now(),
 			i;
 
 		// Merge local with global options
-		if (w.addToHomeConfig) {
+		if ( w.addToHomeConfig ) {
 			for ( i in w.addToHomeConfig ) {
 				options[i] = w.addToHomeConfig[i];
 			}
@@ -161,6 +162,8 @@ var addToHome = (function (w) {
 		closeButton = balloon.querySelector('.addToHomeClose');
 		if ( closeButton ) closeButton.addEventListener('click', clicked, false);
 
+		if ( !isIPad && OSVersion >= 6 ) window.addEventListener('orientationchange', orientationCheck, false);
+
 		setTimeout(show, options.startDelay);
 	}
 
@@ -203,7 +206,7 @@ var addToHome = (function (w) {
 				balloon.style.top = startY - balloon.offsetHeight - options.bottomOffset + 'px';
 			} else {
 				balloon.style.left = '50%';
-				balloon.style.marginLeft = -Math.round(balloon.offsetWidth / 2) + 'px';
+				balloon.style.marginLeft = -Math.round(balloon.offsetWidth / 2) - ( w.orientation%180 && OSVersion >= 6 ? 40 : 0 ) + 'px';
 				balloon.style.bottom = options.bottomOffset + 'px';
 			}
 
@@ -250,6 +253,7 @@ var addToHome = (function (w) {
 			closeButton = balloon.querySelector('.addToHomeClose');
 
 		if ( closeButton ) closeButton.removeEventListener('click', close, false);
+		if ( !isIPad && OSVersion >= 6 ) window.removeEventListener('orientationchange', orientationCheck, false);
 
 		if ( OSVersion < 5 ) {
 			posY = isIPad ? w.scrollY - startY : w.scrollY + w.innerHeight - startY;
@@ -331,6 +335,10 @@ var addToHome = (function (w) {
 		w.sessionStorage.removeItem('addToHomeSession');
 	}
 
+	function orientationCheck () {
+		balloon.style.marginLeft = -Math.round(balloon.offsetWidth / 2) - ( w.orientation%180 && OSVersion >= 6 ? 40 : 0 ) + 'px';
+	}
+
 	// Bootstrap!
 	init();
 
@@ -339,4 +347,4 @@ var addToHome = (function (w) {
 		close: close,
 		reset: reset
 	};
-})(this);
+})(window);
