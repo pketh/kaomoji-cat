@@ -17,7 +17,6 @@ images/blackout.gif
 images/app_back_arrow.svg
 
 scripts/kaomoji.js
-scripts/fastclick.js
 
 templates/action.html
 templates/angry.html

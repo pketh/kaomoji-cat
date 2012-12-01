@@ -77,6 +77,10 @@ display: inline;
   line-height: 2.0555555556em; /* 37px */
 }
 
+li a:active {
+  background-color: #4f4399;
+}
+
 .template_li {
   display: block;
   text-align: center;
