@@ -1,12 +1,12 @@
 @font-face {
   font-family: "Avenir-web";
-  src: url('/fonts/AvenirMedium.otf') format('opentype');
+  src: url('../fonts/AvenirMedium.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir-web";
-  src: url('/fonts/AvenirBlack.ttf') format('truetype');
+  src: url('../fonts/AvenirBlack.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
@@ -58,7 +58,7 @@ h1 {
   }
 }
 .cat {
-  background-image: url('/images/cat.svg');
+  background-image: url('../images/cat.svg');
   background-repeat: no-repeat;
   width: 50%;
   max-width: 300px;
@@ -146,7 +146,7 @@ section {
   margin-top: 10%;
   font-weight: normal;
   font-family: Avenir, "Avenir-web", Helvetica, sans-serif;
-  background: url('/images/rope-full.svg');
+  background: url('../images/rope-full.svg');
   background-position: 100% 80px;
   background-repeat: no-repeat;
   padding-right: 15%;
@@ -212,7 +212,7 @@ footer a {
   width: 82px;
   height: 30px;
   opacity: .2;
-  background-image: url('/images/pketh.svg');
+  background-image: url('../images/pketh.svg');
   background-repeat: no-repeat;
   background-size: contain;
   -webkit-transition: all 0.1s;
@@ -237,7 +237,7 @@ footer a {
   width: 38px;
   height: 35px;
   opacity: .5;
-  background-image: url('/images/app_back_arrow.svg');
+  background-image: url('../images/app_back_arrow.svg');
   background-repeat: no-repeat;
   -webkit-transition: all 0.1s;
   -moz-transition: all 0.1s;
