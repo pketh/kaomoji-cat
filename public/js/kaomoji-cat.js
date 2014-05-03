@@ -26,6 +26,11 @@ $(function() {
             $('main section').detach();
             $('main').append(kaomojisRendered);
 
+            // subpages start from the top
+            if (emoteIndex !== 0 ) {
+                $(document).scrollTop(0);
+            }
+
             // index page list
             if (emoteIndex === 0) {
                 listLength = emoteObj.kaomojis.length;
