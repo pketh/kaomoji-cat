@@ -1,544 +1,260 @@
 @font-face {
-    font-family: "Avenirs";
-    src: url('../fonts/AvenirMedium.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Avenir-web";
+  src: url('/fonts/AvenirMedium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-    font-family: "Avenirs";
-    src: url('../fonts/AvenirBlack.ttf') format('truetype');
-    font-weight: bold;
- }
-
-/* =============================================== */
-/* GLOBALS */
-/* =============================================== */
-
+  font-family: "Avenir-web";
+  src: url('/fonts/AvenirBlack.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
 body {
   background-color: black;
-  font-family: Avenir, "Avenirs", Helvetica, sans-serif;
+  font-family: Avenir, "Avenir-web", Helvetica, sans-serif;
   color: white;
-  width: 100%; /* 320 */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
 }
-
-#wrap {
-  overflow: hidden;
+.container {
+  margin-left: 7.5%;
+  margin-right: 5%;
+}
+header {
+  margin-top: 30px;
   position: relative;
+  height: 150px;
 }
-
-#rope {
-  position: absolute;
-  background: url('../images/rope-full.svg');
-  left: 93.75%;
-  top: 328px;
-  width: 4.375%; /* 14px */
-  min-height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  max-width: 20px;
-  /* max-width: 14px; */
-}
-
 h1 {
   font-weight: bold;
-  font-size: 1.5em; /* 24px */
-  line-height: 1.25em; /* 30px */
-  margin-right: 7.5%; /* 24px */
-  margin-left: 7.5%; /* 24px */
-  margin-top: 26px;
-  position: absolute;
+  font-size: 32px;
+  font-size: 2rem;
+  line-height: 39px;
+  line-height: 2.4375rem;
+  display: inline-block;
 }
-
+@media (min-width: 500px) {
+  header {
+    height: 180px;
+  }
+  h1 {
+    font-size: 40px;
+    font-size: 2.5rem;
+    line-height: 46px;
+    line-height: 2.875rem;
+  }
+}
+@media (min-width: 640px) {
+  header {
+    height: 220px;
+  }
+  h1 {
+    font-size: 44px;
+    font-size: 2.75rem;
+    line-height: 54px;
+    line-height: 3.375rem;
+  }
+}
 .cat {
-  position: absolute;
-  top: 60px;
-  left: 54.6875%; /* 175px */
-  background-image: url('../images/cat.svg');
+  background-image: url('/images/cat.svg');
   background-repeat: no-repeat;
-  width: 38.125%; /* 122px */
-  min-height: 80px;
-  background-size: cover;
-  overflow: visible;
+  width: 50%;
+  max-width: 300px;
+  height: 180px;
+  background-size: contain;
+  position: absolute;
+  right: -10px;
+  top: 25px;
+  z-index: 10;
+  cursor: pointer;
 }
-
-ul.content {
-  margin-left: 7.5%; /* 24px */
-  margin-right: 7.5%; /* 24px */
-  margin-top: 170px;
+.cat:active {
+  opacity: .8;
+}
+.fish {
+  position: absolute;
+  top: 75%;
+  left: 46%;
+  -webkit-transform: rotate(25.7deg);
+  -moz-transform: rotate(25.7deg);
+  -o-transform: rotate(25.7deg);
+  -ms-transform: rotate(25.7deg);
+  transform: rotate(25.7deg);
+  cursor: pointer;
+  width: 13%;
+  min-width: 26px;
+}
+@media (max-width: 655px) {
+  .fish {
+    top: 72%;
+    left: 50%;
+  }
+}
+@media (max-width: 622px) {
+  .fish {
+    top: 70%;
+    left: 52%;
+  }
+}
+@media (max-width: 565px) {
+  .fish {
+    top: 65%;
+    left: 55%;
+  }
+}
+@media (max-width: 511px) {
+  .fish {
+    top: 60%;
+    left: 52%;
+  }
+}
+@media (max-width: 480px) {
+  .fish {
+    top: 56%;
+    left: 54%;
+  }
+}
+@media (max-width: 455px) {
+  .fish {
+    top: 53%;
+    left: 52%;
+  }
+}
+@media (max-width: 420px) {
+  .fish {
+    top: 50%;
+    left: 51%;
+  }
+}
+@media (max-width: 400px) {
+  .fish {
+    top: 46%;
+    left: 50%;
+  }
+}
+@media (max-width: 320px) {
+  .fish {
+    top: 39%;
+    left: 49%;
+    min-width: 24px;
+  }
+}
+section {
+  clear: both;
+  margin-top: 10%;
   font-weight: normal;
-  width: 85%;
-  font-family: Avenir, "Avenirs", Helvetica, sans-serif;
+  font-family: Avenir, "Avenir-web", Helvetica, sans-serif;
+  background: url('/images/rope-full.svg');
+  background-position: 100% 80px;
+  background-repeat: no-repeat;
+  padding-right: 15%;
+  margin-right: -5.6%;
+  background-size: 18px;
 }
-
+@media (min-width: 500px) {
+  section {
+    background-size: 20px;
+  }
+}
+@media (min-width: 640px) {
+  section {
+    background-size: 22px;
+  }
+}
 li {
-display: inline;
+  display: inline;
   list-style-type: none;
-  font-size: 1.125em; /* 18px */
-  line-height: 2.0555555556em; /* 37px */
+  font-size: 26px;
+  font-size: 1.625rem;
+  line-height: 56px;
+  line-height: 3.5rem;
+  margin-right: 20px;
 }
-
-li a:active {
-  background-color: #4f4399;
+li {
+  color: white;
 }
-
-.template_li {
+a li:active,
+a li:hover,
+footer a:hover {
+  border-radius: 3px;
+  color: #A0E1FA;
+}
+.emote {
+  padding: 0;
+}
+.emote li {
   display: block;
   text-align: center;
 }
-
-li a {
-  text-decoration: underline;
-  color: white;
-  margin-right: 20px;
-}
-
-/* =============================================== */
-/* TEMPLATE PAGES */
-/* =============================================== */
-
-.fish {
-  position: absolute;
-  top: 113px;
-  left: 68%; /* 235px */
-  transform:rotate(25.7deg);
-  -ms-transform:rotate(25.7deg); /* IE 9 */
-  -moz-transform:rotate(25.7deg); /* Firefox */
-  -webkit-transform:rotate(25.7deg);
-  -o-transform:rotate(25.7deg); /* Opera */
-  width: 7.8125%; /* 25px */
-  height: 10%; /* 57px */
-  background-image: url('../images/fish.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  max-height: 106px;
-}
-
-
-/* =============================================== */
-/* FOOTER */
-/* =============================================== */
-
-/* TODO Wrap footer text lines in classes for device adjustability */
-
-#footer {
-  height: 79px;
+footer {
+  margin-top: 10%;
+  margin-bottom: 6%;
+  margin-right: 7.5%;
   position: relative;
-  font-size: 0.875em; /* 14px */
-  line-height: 22px;
+  font-size: 17.6px;
+  font-size: 1.1rem;
   font-weight: normal;
   font-style: normal;
   color: #58585A;
-  margin-left: 7.5%;
-  padding-top: 15px;
-  background-image: url('../images/blackout.gif');
   background-repeat: repeat;
 }
-
-#footer a {
+footer p {
+  display: block;
+  padding-bottom: 18px;
+}
+footer a {
   color: white;
   text-decoration: none;
 }
-
 .pketh {
-  position: absolute;
-  top: 34%; /* 37px */
-  left: 64.8648648649%; /* 192px */
-  width: 27.027027027%; /* 80px */
-  height: 100%; /* 26px */
-  background-image: url('../images/pketh.svg');
+  width: 82px;
+  height: 30px;
+  opacity: .2;
+  background-image: url('/images/pketh.svg');
   background-repeat: no-repeat;
   background-size: contain;
-  /* max-width: 80px; */
-  
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
+  display: inline-block;
+  float: right;
+  margin-right: -10px;
 }
-
+.pketh:hover,
 .pketh:active {
-  background-image: url('../images/pketh-active.svg');
-  background-size: contain;
-  /* max-width: 80px; */
+  opacity: .5;
 }
-
-/* =============================================== */
-/* IOS APP conditional styles , hidden in web mode */
-/* =============================================== */
-
-/* TODO put the image into here and add an :active bk glow arrow image */
-
-#back_button {
+/* --------------- */
+/* App mode styles */
+/* --------------- */
+.back-button {
   position: fixed;
-  top: 55%;
+  top: 53.5%;
   left: 19px;
   width: 38px;
   height: 35px;
-  background-image: url('../images/app_back_arrow.svg');
+  opacity: .5;
+  background-image: url('/images/app_back_arrow.svg');
   background-repeat: no-repeat;
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
 }
-
-#back_button:active {
-  background-image: url('../images/app_back_arrow_active.svg');
+.back-button:active {
+  opacity: .8;
 }
-
-/* =============================================== */
-/* MEDIA BREAK PTS */
-/* =============================================== */
-
-/* Defaults above = iphone portrait */
-
-/* Smartphones (landscape) ----------- */
-@media only screen and (min-width : 321px) {
-
-  body {
-    font-size: 24px;
-  }
-  
-  #rope {
-    top: 280px;
-  }
-  
-  #footer {
-    font-size: 0.775em;
-  }
-  
-  .cat {
-    min-height: 120px;
-  }
-
-  .fish {
-    top: 142px;
-    left: 70%;
-  }
-  
-  ul.content {
-    margin-top: 237px;
-  }
-
-  .for-ios {
-      display: none;
-    }
-    .for-pc {
-      display: inline;
-    }
-    
-
+.index .back-button,
+.index .fish {
+  display: none;
 }
-  
-@media (device-width : 320px) {
-  .for-ios {
-    display: inline;
-  }
-  .for-pc {
-    display: none;
-  }
-} /* closing iphone landscape */
-
-@media screen and (min-width: 520px) {
-  .cat {
-    width: 35.125%;
-  }
+.emote .back-button,
+.emote .fish {
+  display: block;
 }
-
-@media only screen and (min-width : 540px) {
-  .cat {
-    left: 58.6875%;
-    width: 33.125%;
-    min-height: 141px;
-  }
-  
-  .fish {
-    top: 160px;
-    left: 76%;
-  }
-}
-
-/* iphone 5 landscape ---------------- */
-@media only screen and (min-width : 568px) {
-
-  ul.content {
-    width: 83%;
-    margin-top: 270px;
-  }
-
-}
-
-@media only screen and (device-width : 568px) {
-
-  .for-ios {
-    display: inline;
-  }
-  .for-pc {
-    display: none;
-  }
-}/* closing iphone 5 landscape */
-
-@media screen and (min-width : 614px) {
-  .cat {
-    left: 56.6875%;
-    width: 35.125%;
-  }
-  
-  .fish {
-    top: 161px;
-    left: 72%;
-  }
-  
-}
-
-@media only screen and (min-width : 642px) {
-  .cat {
-    width: 33.125%;
-    left: 58.6875%;
-  }
-}
-
-@media screen and (min-width : 716px ) {
-  .cat {
-    width: 30.125%;
-    left: 62.6875%;
-  }
-  
-  .pketh {
-    width: 20%;
-  }
-  
-  .fish {
-    top: 160px;
-    left: 75%;
-  }
-}
-
-/* iPads (portrait) ----------- */
-@media only screen and (min-width : 768px) {
-
-  body {
-    font-size: 30px;
-  }
-  
-  ul.content {
-    margin-top: 300px;
-    width: 75%;
-  }
-  
-  li {
-    font-size: .9em;
-    line-height: 2.2;
-  }
-  
-  #rope {
-    top: 750px;
-  }
-  
-  .cat {
-    min-height: 191px;
-    width: 37.125%;
-    left: 56.6875%;
-  }
-  
-  .fish {
-      top: 197px;
-      left: 74%;
-      max-height: 130px;
-      }
-  
-  .padding {
-    padding-bottom: 35px;
-    padding-top: 45px;
-  }
-  
-  #footer {
-    font-size: 0.575em;
-    line-height: 1.3em;
-  }
-  
-  .pketh {
-    width: 18%;
-    left: 72%;
-    top: 21%;
-  }
-
-}
-
-@media only screen and (device-width : 768px) {
-  .for-ios {
-    display: inline;
-  }
-  .for-pc {
-    display: none;
-  }
-}
- /* closing ipad portrait */
-
-@media screen and (min-width: 840px) {
- .cat {
-   width: 34.125%;
-   left: 58.6875%;
- }
-  .fish {
-    top: 199px;
-    left: 75%;
-  }
-}
-/* middle small screens 900px wide  ------------ */
-@media only screen and (min-width : 900px) {
-  
-  #rope {
-    top: 580px;
-  }
-  
-  .cat {
-    width: 32%;
-    left: 60%;
-  }
-  
-  .pketh {
-    left: 70%;
-  }
-}
-
-@media only screen and (min-width : 928px) {
-  .cat {
-    width: 31.125%;
-  }
-}
-
-@media only screen and (min-width : 950px) {
-  .cat {
-    width: 30.125%;
-  }
-}
-
-/* iPads (landscape) ----------- */
-@media only screen and (min-width : 1024px) {
-
-  .cat {
-    min-height: 184px;
-    width: 27%;
-    left: 62%;
-  }
-  
-  .pketh {
-    width: 15%;
-    left: 74%;
-  }
-  
-  #rope {
-    top: 420px;
-  }
-
-}
-
-@media only screen and (device-width : 1024px) {
-  .for-ios {
-    display: inline;
-  }
-  .for-pc {
-    display: none;
-  }
-}
-
- /* closing ipad landscape */
-
-@media screen and (min-width : 1098px ){
-  ul.content {
-    width: 56%;
-  }
-  
-  #rope {
-    left: 72.75%;
-  }
-  
-  .cat {
-    width: 25%;
-    left: 48%;
-  }
-  .pketh {
-    width: 12%;
-    left: 55%;
-  }
-  #footer {
-    font-size:0.60em;
-    padding-top: 29px;
-    top: 37%;
-  }
-  
-}
-
-@media only screen and (min-width : 1118px) {
-  .cat {
-    width: 25%;
-  }
-  .fish {
-    left: 59%;
-  }
-}
-
-/* Desktops and laptops (2318px on retina)----------- */
-@media only screen and (min-width : 1216px) {
-
-  .cat {
-    width: 23%;
-  }
-  
-} /* closing desktop */
-
-@media only screen and (min-width : 1341px) {
-
-  .cat {
-    width: 21%;
-  }
-
-}
-
-
-/* Big Screens ----------------- */
-@media only screen and (min-width : 1420px) {
-
-  ul.content {
-    width: 55%
-  }
-  
-  #rope {
-    left: 74%;
-  }
-  .cat {
-    width: 21%;
-    left: 52%;
-  }
-  .fish {
-    left: 62%;
-    top: 206px;
-  }
-  
-  .pketh {
-  width: 10%;
-  left: 57%;
-  top: 41%;
-  }
-  
-  #footer {
-    font-size: 0.675em;
-    padding-top: 35px;
-  }
-
-/* Styles */
-} /* closing big ass screens */
-
-@media screen and (min-width: 1486px) {
-  .cat {
-    width: 18%;
-  }
-  .fish {
-    left: 60.5%;
-    top: 206px;
-  }
-}
-
-@media screen and (min-widthj:1744px) {
-  .cat {
-    width: 16%;
-  }
-  .fish {
-    left: 59.5%;
-  }
-}
-
-/*  narrow contents, custom footer txt to display for compuetrr - (hide for device width ipad) */
+/* ------ */
+/* Mixins */
+/* ------ */

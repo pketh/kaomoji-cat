@@ -1,0 +1,296 @@
+@font-face {
+	font-family: "Avenir-web";
+	src: url('/fonts/AvenirMedium.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Avenir-web";
+	src: url('/fonts/AvenirBlack.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+ }
+
+body {
+	background-color: black;
+	font-family: Avenir, "Avenir-web", Helvetica, sans-serif;
+	color: white;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 800px;
+}
+
+.container {
+	margin-left: 7.5%;
+	margin-right: 5%;
+}
+
+header {
+	margin-top: 30px;
+	position: relative;
+	height: 150px;
+}
+
+h1 {
+	font-weight: bold;
+	.font-size(32px);
+	.line-height(39px);
+	display: inline-block;
+}
+@media(min-width: 500px) {
+	header {
+		height: 180px;
+	}
+	h1 {
+		.font-size(40px);
+		.line-height(46px);
+	}
+}
+@media(min-width: 640px) {
+	header {
+		height: 220px;
+	}
+	h1 {
+		.font-size(44px);
+		.line-height(54px);
+	}
+}
+
+.cat {
+	background-image: url('/images/cat.svg');
+	background-repeat: no-repeat;
+	width: 50%;
+	max-width: 300px;
+	height: 180px;
+	background-size: contain;
+	position: absolute;
+	right: -10px;
+	top: 25px;
+	z-index: 10;
+	cursor: pointer;
+}
+
+.cat:active {
+	opacity: .8;
+}
+
+.fish {
+	position: absolute;
+	top: 75%;
+	left: 46%;
+	.transform-rotate(25.7deg);
+	cursor: pointer;
+	width: 13%;
+	min-width: 26px;
+}
+@media (max-width:655px) {
+	.fish {
+		top: 72%;
+		left: 50%;
+	}
+}
+@media (max-width:622px) {
+	.fish {
+		top: 70%;
+		left: 52%;
+	}
+}
+@media (max-width:565px) {
+	.fish {
+		top: 65%;
+		left: 55%;
+	}
+}
+@media (max-width:511px) {
+	.fish {
+		top: 60%;
+		left: 52%;
+	}
+}
+@media (max-width:480px) {
+	.fish {
+		top: 56%;
+		left: 54%;
+	}
+}
+@media (max-width:455px) {
+	.fish {
+		top: 53%;
+		left: 52%;
+	}
+}
+@media (max-width:420px) {
+	.fish {
+		top: 50%;
+		left: 51%;
+	}
+}
+@media (max-width:400px) {
+	.fish {
+		top: 46%;
+		left: 50%;
+	}
+}
+@media (max-width:320px) {
+	.fish {
+		top: 39%;
+		left: 49%;
+		min-width: 24px;
+	}
+}
+
+
+section {
+	clear: both;
+	margin-top: 10%;
+	font-weight: normal;
+	font-family: Avenir, "Avenir-web", Helvetica, sans-serif;
+	background: url('/images/rope-full.svg');
+	background-position: 100% 80px;
+	background-repeat: no-repeat;
+	padding-right: 15%;
+	margin-right: -5.6%;
+	background-size: 18px;
+}
+@media(min-width: 500px) {
+	section {
+		background-size: 20px;
+	}
+}
+@media(min-width: 640px) {
+	section {
+		background-size: 22px;
+	}
+}
+
+
+li {
+	display: inline;
+	list-style-type: none;
+	.font-size(26px);
+	.line-height(56px);
+	margin-right: 20px;
+}
+
+li {
+	color: white;
+}
+
+a li:active, a li:hover, footer a:hover {
+	border-radius: 3px;
+	color: #A0E1FA;
+}
+
+.emote {
+	padding: 0;
+}
+
+.emote li {
+	display: block;
+	text-align: center;
+}
+
+footer {
+	margin-top: 10%;
+	margin-bottom: 6%;
+	margin-right: 7.5%;
+	position: relative;
+	.font-size(17.6px);
+	font-weight: normal;
+	font-style: normal;
+	color: #58585A;
+	background-repeat: repeat;
+}
+
+footer p {
+	display: block;
+	padding-bottom: 18px;
+}
+
+footer a {
+	color: white;
+	text-decoration: none;
+}
+
+
+.pketh {
+	width: 82px;
+	height: 30px;
+	opacity: .2;
+	background-image: url('/images/pketh.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	.transition(.1s);
+	display: inline-block;
+	float: right;
+	margin-right: -10px;
+}
+
+.pketh:hover, .pketh:active {
+	opacity: .5;
+}
+
+
+/* --------------- */
+/* App mode styles */
+/* --------------- */
+
+.back-button {
+	position: fixed;
+	top: 53.5%;
+	left: 19px;
+	width: 38px;
+	height: 35px;
+	opacity: .5;
+	background-image: url('/images/app_back_arrow.svg');
+	background-repeat: no-repeat;
+	.transition(.1s);
+}
+
+.back-button:active {
+	opacity: .8;
+}
+
+.index .back-button,
+.index .fish {
+	display: none
+}
+
+.emote .back-button,
+.emote .fish {
+	display: block;
+}
+
+/* ------ */
+/* Mixins */
+/* ------ */
+
+.transition(@time) {
+	-webkit-transition: all @time;
+	-moz-transition: all @time;
+	-o-transition: all @time;
+	transition: all @time;
+}
+
+.line-height(@px) {
+	line-height: @px;
+	@rem: unit(@px, rem);
+	line-height: @rem / 16px;
+}
+
+.font-size(@px) {
+	font-size: @px;
+	@rem: unit(@px, rem);
+	font-size: @rem / 16;
+}
+
+.transform(...) {
+  -webkit-transform: @arguments;
+  -moz-transform: @arguments;
+  -o-transform: @arguments;
+  -ms-transform: @arguments;
+  transform: @arguments;
+}
+.transform-rotate(@deg){
+  .transform(rotate(@deg));
+}

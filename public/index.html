@@ -1,170 +1,99 @@
 <!DOCTYPE html>
-<html lang="en" manifest="manifest.appcache">
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="Find the perfect Kaomoji to express how you're feeling." />
-    <meta name="viewport" content="initial-scale = 1.0, user-scalable = no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-  	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-        
-    <title>Kaomoji Cat</title>
-  
-    <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/add2home.css" />
-    
-    <script src="scripts/kaomoji.js"></script>
-    
-    <!-- add2home script -->
-    <script>
-    var addToHomeConfig = {
-    	autostart: false,
-    	startDelay: 0,
-    	lifespan: 20000,
-    };
-    </script>
-    <script src="scripts/add2home.js"></script>
-    
-    <!-- Google Analytics stuff -->
-    <script type="text/javascript">
-    
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-36730291-1']);
-      _gaq.push(['_trackPageview']);
-    
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
+<html lang="en"> <!-- add appcache last -->
+	<head>
+		<meta charset="utf-8">
+		<title>Kaomoji Cat</title>
+		<meta name="description" content="Find the perfect Kaomoji to express how you're feeling." />
 
-    </script>
-    
-<!-- Favicons and Touch icons -->
-    <link href="images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/57.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/72.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/114.png">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/144.png">
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link href="images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+		<meta name="viewport" content="width=device-width">
 
-<!-- IOS Launch screen images --> <!-- TODO: CHANGE THESE TO ABSOLUTE PATHS -->
-        <!-- iPhone -->
-        <link href="images/apple-touch-startup-image-320x460.png"
-              media="(device-width: 320px) and (device-height: 480px)
-                 and (-webkit-device-pixel-ratio: 1)"
-              rel="apple-touch-startup-image">
-        
-        <!-- iPhone (Retina) -->
-        <link href="images/apple-touch-startup-image-640x920.png"
-              media="(device-width: 320px) and (device-height: 480px)
-                 and (-webkit-device-pixel-ratio: 2)"
-              rel="apple-touch-startup-image">
-        
-        <!-- iPhone 5 -->
-        <link href="images/apple-touch-startup-image-640x1096.png"
-              media="(device-width: 320px) and (device-height: 568px)
-                 and (-webkit-device-pixel-ratio: 2)"
-              rel="apple-touch-startup-image">
-        
-        <!-- old iPad portrait and landscape --> <!-- WEBAPP letterbox ERROR -->
-        <link href="images/apple-touch-startup-image-768x1004.png"
-              media="(device-width: 768px) and (device-height: 1024px)
-                 and (orientation: portrait)
-                 and (-webkit-device-pixel-ratio: 1)"
-              rel="apple-touch-startup-image">
-        <link href="images/apple-touch-startup-image-748x1024.png"
-              media="(device-width: 768px) and (device-height: 1024px)
-                 and (orientation: landscape)
-                 and (-webkit-device-pixel-ratio: 1)"
-              rel="apple-touch-startup-image">
-        
-        <!-- iPad (Retina) portrait and landscape --> <!-- WEBAPP letterbox ERROR -->
-        <link href="images/apple-touch-startup-image-1536x2008.png"
-              media="(device-width: 768px) and (device-height: 1024px)
-                 and (orientation: portrait)
-                 and (-webkit-device-pixel-ratio: 2)"
-              rel="apple-touch-startup-image">
-        <link href="images/apple-touch-startup-image-1496x2048.png"
-              media="(device-width: 768px) and (device-height: 1024px)
-                 and (orientation: landscape)
-                 and (-webkit-device-pixel-ratio: 2)"
-              rel="apple-touch-startup-image">
+		<!-- Apple stuff -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<link rel="apple-touch-icon" sizes="120x120" href="images/apple/120.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="images/apple/152.png">
+
+        <link href="images/apple/iphone.png"
+	        media="(device-width: 320px)
+		        and (-webkit-device-pixel-ratio: 2)"
+	        rel="apple-touch-startup-image">
+
+        <link href="images/apple/ipad-portrait.png"
+	        media="(device-width: 1536px)
+		        and (device-height: 1024px)
+		        and (orientation: portrait)
+		        and (-webkit-device-pixel-ratio: 2)"
+	        rel="apple-touch-startup-image">
+
+        <link href="images/apple/ipad-landscape.png"
+	        media="(device-width: 1536px)
+		        and (device-height: 1024px)
+		        and (orientation: landscape)
+		        and (-webkit-device-pixel-ratio: 2)"
+	        rel="apple-touch-startup-image">
+	</head>
+
+	<body>
+		<div class="container">
+			<header role="banner">
+				<script id="quote" type="text/template">
+					<div class="top">
+						<h1>{{{kaomojis.quote}}}</h1>
+						<figure class="cat {{kaomojis.type}}">
+							<img class="fish" src="images/fish.svg">
+						</figure>
+					</div>
+				</script>
+			</header>
+
+			<main class='content' role="main">
+				<script id="main" type="text/template">
+					<section class="list {{kaomojis.type}}">
+						<ul>
+							{{#kaomojis.kaomojis}}
+								<li>{{.}}</li>
+							{{/kaomojis.kaomojis}}
+						</ul>
+						<nav class="back-button">
+						</nav>
+					</section>
+				</script>
+			</main>
 
 
-  </head>
-  <body>
-      <div id="wrap">
-          <div id="rope"></div>
-            
-            <h1>Kaomoji Cat is<br>Feeling...</h1>
-                    
-            <div class="cat"></div>
-            
-            <ul class="content">
-              <li><a ontouchstart="" href="templates/action.html">Action</a></li>
-              <li><a ontouchstart="" href="templates/angry.html">Angry</a></li>
-              <li><a ontouchstart="" href="templates/apology.html">Apologizing</a></li>
-              <li><a ontouchstart="" href="templates/bear.html">Bears</a></li>
-              <li><a ontouchstart="" href="templates/cat.html">Cats</a></li>
-              <li><a ontouchstart="" href="templates/confused.html">Confused</a></li>
-              <li><a ontouchstart="" href="templates/dancing.html">Dancing</a></li>
-              <li><a ontouchstart="" href="templates/dead.html">Dead</a></li>
-              
-              <li><a ontouchstart="" href="templates/dog.html">Dogs</a></li>
-              <li><a ontouchstart="" href="templates/drinking.html">Drinking</a></li>
-              <li><a ontouchstart="" href="templates/evil.html">Evil</a></li>
-              <li><a ontouchstart="" href="templates/fish.html">Fishes</a></li>
-              <li><a ontouchstart="" href="templates/friends.html">Friends</a></li>
-    
-              <li><a ontouchstart="" href="templates/happy.html">Happy</a></li>
-              <li><a ontouchstart="" href="templates/greetingsGoodbyes.html">Hi or Bye</a></li>
-              <li><a ontouchstart="" href="templates/hiding.html">Hiding</a></li>
-              <li><a ontouchstart="" href="templates/kissing.html">Kissing</a></li>
-              <li><a ontouchstart="" href="templates/laughing.html">Laughing</a></li>
-              <li><a ontouchstart="" href="templates/love.html">Love</a></li>
-              <li><a ontouchstart="" href="templates/mellow.html">Mellow and Meh</a></li>
-              <li><a ontouchstart="" href="templates/misc.html">Miscellaneous</a></li>
-              <li><a ontouchstart="" href="templates/monkey.html">Monkeys</a></li>
-              <li><a ontouchstart="" href="templates/mustache.html">Mustache</a></li>
-              <li><a ontouchstart="" href="templates/animal.html">Other Animals</a></li>
-              <li><a ontouchstart="" href="templates/pain.html">Pain</a></li>
-              <li><a ontouchstart="" href="templates/pig.html">Pigs</a></li>
-              <li><a ontouchstart="" href="templates/sad.html">Sad Crying</a></li>
-              <li><a ontouchstart="" href="templates/scared.html">Scared</a></li>
-              <li><a ontouchstart="" href="templates/defeat.html">Surrender</a></li>
-              <li><a ontouchstart="" href="templates/shocked.html">Surprised</a></li>
-              <li><a ontouchstart="" href="templates/shy.html">Shy or Embarrased</a></li>
-              <li><a ontouchstart="" href="templates/singing.html">Singing</a></li>
-              <li><a ontouchstart="" href="templates/sleeping.html">Sleeping, Tired or Waking Up</a></li>
-              <li><a ontouchstart="" href="templates/smug.html">Smug</a></li>
-              <li><a ontouchstart="" href="templates/winking.html">Winking</a></li>
-              <li><a ontouchstart="" href="templates/worried.html">Worried</a></li>
-              <li><a ontouchstart="" href="templates/writing.html">Writing</a></li>
-    
-            </ul>
-        
-  <!-- ADD FOOTER CLASSES js for changings -->
-   
-      <div id="footer">
-        <p>by <a href="https://twitter.com/pketh">@pketh</a>,</p>
-        <!-- Show on ios -->
-        <p class="for-ios"><a href="JavaScript:void(0);" onclick="addToHome.show();">+ add to homescreen<br/></a></p>
-        <p class="for-ios">works offline!</p>
-        
-        <!-- Show in webapp mode : toggled by js -->
-        <p class="webapp-footer" style="display: none;"><a href="http://www.pketh.org"More of my stuff</a><br/></p>
-        <p class="webapp-footer" style="display: none;">Thanks for being you.</p>
-       
-       <!-- Show on PC -->
-        <p class="for-pc"><a href="https://github.com/pketh/kaomoji-cat">Fork on Github<br/></a>
-       <p class="for-pc">Put me on your phone!</p>
-          
-        <a href="http://www.pketh.org"><div class="pketh"></div></a>
-              
-      </div> <!--closing footer-->
-      
-    </div> <!--closing wrap-->
+			<footer class="footer" role="contentinfo">
+				<a href="http://www.pketh.org">
+					<figure class="pketh"></figure>
+				</a>
+				<p>
+					＼(=^‥^)/’`
+				</p>
+				<p>
+					<a href="https://github.com/pketh/kaomoji-cat">
+						Github
+					</a>
+					,&nbsp
+					<a href="http://www.pketh.org/Kaomoji-Cat">
+						About
+					</a>
+				</p>
 
-  
-  </body>
+			</footer>
+		</div>
+	</body>
+
+	<script src="js/jquery-2.1.0.min.js"></script>
+	<script src="js/mustache.min.js"></script>
+	<script src="js/kaomoji-cat.js"></script>
+	<script src="js/fastclick.js"></script>
+	<!-- fastclick script here -->
+	<script>
+		window.addEventListener('load', function() {
+			new FastClick(document.body);
+		}, false);
+	</script>
+
 </html>
