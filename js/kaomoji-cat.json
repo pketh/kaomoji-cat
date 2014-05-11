@@ -220,13 +220,13 @@
 	{
 		"type":       "emote",
 		"emotion":    "Smug",
-		"quote":      "I'm the kingliest of kaomoji",
+		"quote":      "I'm the kingliest <br>of kaomoji",
 		"kaomojis": [ "ー(￣～￣)ξ", "(((￣へ￣井)", "(`へ´*)ノ", "(￣^￣)", "（￣へ￣）", "（￣～￣;）", "(￣ェ￣;)", "(-、-)", "( ；｀ヘ´)", "o(´^｀)o", "(￣ω￣;)", "（｀＾´）ノ", "<(￣︶￣)>" ]
 	},
 	{
 		"type":       "emote",
 		"emotion":    "Winking",
-		"quote":      "Hey Good Looking",
+		"quote":      "Hey Good <br>Looking",
 		"kaomojis": [ "（＾＿－）", "(－ｏ⌒)", "（＾＿−）", "(^_-)", "(^_−)☆", "(⌒.−)＝★", "（＾_-）", "（＾＿・）", "๏[-ิ_•ิ]๏", "（○゜ε＾○）", "（＾＿－）≡★", "☆～（ゝ。∂）", "＼（^０＾）／", "(･ｪ-)" ]
 	},
 
