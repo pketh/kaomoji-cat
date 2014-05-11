@@ -1,5 +1,7 @@
 # Kaomoji Cat
 
+<img src="screen1.png">
+
 Kaomojis are like emojis but in the form of text strings like:
 this happy guy ＼（＠￣∇￣＠）／ <br>
 or
@@ -12,4 +14,4 @@ While there are way more kaomojis than emojis, kaomojis can be more flexible and
 [Try it](http://kaomojicat.com/ "See Kaomoji Cat")<br>
 [More details](http://pketh.org/Kaomoji-Cat)
 
-![screenshot](http://payload100.cargocollective.com/1/0/1410/4319041/photo-4.png)
+<img src="screen2.png" width="424" height="834"w
