@@ -113,7 +113,7 @@
 	{
 		"type":       "emote",
 		"emotion":    "Laughing",
-		"quote":      "Heh heee ha HAAA HAAA <br>*cough* *snort*",
+		"quote":      "Heh heee ha <br>HAAA HAAA <br>*cough* <br>*snort*",
 		"kaomojis": [ "（・∀・）", "（　´∀｀）", "（⌒▽⌒）", "（＾ｖ＾）", "(*≧▽≦)ﾉｼ))", "(●´艸`)", "(*´艸`*)", "(｡ >艸<)", "(*≧艸≦)", "(*・艸・)" ]
 	},
 	{
@@ -140,7 +140,7 @@
 	{
 		"type":       "emote",
 		"emotion":    "Monkeys",
-		"quote":      "What are these guys <br>up to?",
+		"quote":      "What are these <br>guys up to?",
 		"kaomojis": [ "@(o･ｪ･)@", "└@(･ｪ･)@┐", "@(｡･o･)@", "@(o･ｪ･o)@", "@(*^ｪ^)@" ]
 	},
 	{
