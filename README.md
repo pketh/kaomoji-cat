@@ -14,4 +14,6 @@ While there are way more kaomojis than emojis, kaomojis can be more flexible and
 [Try it](http://kaomojicat.com/ "See Kaomoji Cat")<br>
 [More details](http://pketh.org/Kaomoji-Cat)
 
-<img src="screen2.png" width="424" height="834">
+<!-- <img src="screen2.png" width="424" height="834"> -->
+
+<img src="screen3.png" width="320" height="568">
