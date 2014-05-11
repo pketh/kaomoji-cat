@@ -9,6 +9,7 @@ $(function() {
         kaomojisTemplate,
         kaomojisRendered,
         listLength;
+    var indexScrollTop = 0;
 
     render(0);
 
@@ -37,6 +38,7 @@ $(function() {
                 for (var i = 1; i <= listLength; i ++ ) {
                     $('li:nth-child(' + i + ')').wrap('<a href="' + i + '"></a>');
                 }
+                $(document).scrollTop(indexScrollTop);
             }
             pushState();
             backButton();
@@ -46,6 +48,7 @@ $(function() {
     function pushState() {
         $('.index a').on('click', function(event) {
             event.preventDefault();
+            indexScrollTop = $(document).scrollTop();
             var emote = $(this).attr('href');
             history.pushState(null, null, emote);
             render(emote);
