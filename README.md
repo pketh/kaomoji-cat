@@ -1,6 +1,6 @@
 # Kaomoji Cat
 
-<img src="screen1.png">
+<img src="screen1.png" width="60" height="60">
 
 Kaomojis are like emojis but in the form of text strings like:
 this happy guy ＼（＠￣∇￣＠）／ <br>
@@ -16,4 +16,4 @@ While there are way more kaomojis than emojis, kaomojis can be more flexible and
 
 <!-- <img src="screen2.png" width="424" height="834"> -->
 
-<img src="screen2.png" width="600">
+<img src="screen2.png" width="500">
